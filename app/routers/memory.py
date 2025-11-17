@@ -43,7 +43,7 @@ def remember(mem: MemoryCreate, db: Session = Depends(get_db)):
         ids=[str(db_entry.id)],
         documents=[mem.text],
         embeddings=[embedding],
-        metadatas=[{"type": mem.type, "tags": mem.tags}]
+        metadatas=[{"type": mem.type, "tags": ",".join(mem.tags)}]
     )
 
     return {"status": "saved", "id": db_entry.id}
