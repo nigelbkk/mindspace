@@ -1,0 +1,2 @@
+collection = {}
+user_sessions = {}
