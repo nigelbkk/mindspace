@@ -1,12 +1,5 @@
 import chromadb
 from app.config import settings
-
-# chroma_client = chromadb.PersistentClient(path=settings.CHROMA_PATH)
-# collection = chroma_client.get_or_create_collection(
-#     name=settings.COLLECTION_NAME,
-#     metadata={"hnsw:space": "cosine"}
-# )
-
 from fastapi import FastAPI
 from .routers import memory, health
 from .config import settings

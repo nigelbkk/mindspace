@@ -4,13 +4,19 @@ from ..db import SessionLocal, Memory
 from ..embeddings import embed_text
 from ..config import settings
 from ..models.schemas import MemoryCreate, RecallQuery
-# from ..main import collection
 from ..core import collection
 
 import uuid
 from datetime import datetime
 
 router = APIRouter()
+
+STATIC_CONTEXT = {
+	"location": "Thailand",
+	"focus": "network infrastructure",
+	"customers": ["enterprise clients in SEA"],
+	"research_interests": ["SD-WAN optimization", "zero-trust"]
+}
 
 def get_db():
     db = SessionLocal()
