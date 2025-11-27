@@ -8,6 +8,6 @@ class MemoryCreate(BaseModel):
     tags: Optional[List[str]] = []
 
 class RecallQuery(BaseModel):
-    query: str
+    text: str
     tags: Optional[List[str]] = []
     k: Optional[int] = 5

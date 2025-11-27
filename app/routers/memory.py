@@ -57,8 +57,10 @@ def remember(mem: MemoryCreate, db: Session = Depends(get_db)):
 # ---------- RECALL ----------
 @router.post("/recall")
 def recall(query: RecallQuery):
-    q_emb = embed_text(query.query)
-    print(query.query)
+    # q_emb = embed_text(query.query)
+    print(query.text)
+    q_emb = embed_text(query.text)
+    # print(query.query)
 
     results = collection.query(
         query_embeddings=[q_emb],
